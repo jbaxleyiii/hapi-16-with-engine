@@ -1,0 +1,14 @@
+{
+  "name": "hapi-16-engine",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-engine": "^1.0.1-alpha.6",
+    "apollo-server-hapi": "^1.2.0",
+    "graphql": "^0.13.1",
+    "graphql-tools": "^2.21.0",
+    "hapi": "^16.6.2"
+  }
+}
