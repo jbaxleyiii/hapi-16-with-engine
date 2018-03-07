@@ -2,7 +2,9 @@
   "name": "hapi-16-engine",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "load:with-engine": "artillery run load.yml -o engine.json",
+    "load:hapi": "artillery run load.yml -o hapi.json"
   },
   "dependencies": {
     "apollo-engine": "^1.0.1-alpha.6",
@@ -10,5 +12,8 @@
     "graphql": "^0.13.1",
     "graphql-tools": "^2.21.0",
     "hapi": "^16.6.2"
+  },
+  "devDependencies": {
+    "artillery": "^1.6.0-14"
   }
 }

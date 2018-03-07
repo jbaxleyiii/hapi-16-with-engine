@@ -59,3 +59,13 @@ const start = async () => {
 // run the above function
 start();
 ```
+
+### Load testing
+To run a load test to get information about Engine timing, do the following steps:
+
+1. `npm start`
+2. `npm run load:with-engine`
+3. `npm run load:with-hapi -- -t http://localhost:<port>` where `<port>` is replaced with the port hapi is on from step 1
+
+
+This will generate two files (`engine.json`, and `hapi.json`) with timing data included for comparision

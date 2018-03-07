@@ -16,9 +16,7 @@ const start = async () => {
     apiKey: process.env.ENGINE_API_KEY,
   });
   const listener = await engine.hapiListener({ port: PORT });
-  const server = new hapi.Server({
-    debug: { request: "*" },
-  });
+  const server = new hapi.Server();
 
   server.connection({ host, listener, autoListen: false });
 
@@ -33,9 +31,12 @@ const start = async () => {
 
   server.start(err => {
     if (err) throw err;
-    const { protocol, host } = server.info;
+    const { protocol, host, uri } = server.info;
     console.log(
-      `Server running at: ${protocol}//${host}:${PORT} with Engine in front!`
+      `Server running!
+    Engine Proxied: ${protocol}//${host}:${PORT}
+    Hapi: ${uri}
+`
     );
   });
 };
